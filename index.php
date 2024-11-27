@@ -6,7 +6,12 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    
+    <?php 
+        
+        if (1==1) return;
+        else return;
+        // koniec kodu php.
+    ?>
     <script src="script.js"></script>
 </body>
 </html>
