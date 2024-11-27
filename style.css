@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  height: 100svh;
+  justify-content: center;
+  align-items: center;
+}
+
+.game__cells-container {
+  display: grid;
+  height: 300px;
+  width: 300px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.game__cell {
+  border: 3px solid black;
+  background-color: transparent;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+
+.game__cell:nth-child(1) {
+  border-top: none;
+  border-left: none;
+}
+
+.game__cell:nth-child(2) {
+  border-top: none;
+}
+
+.game__cell:nth-child(3) {
+  border-top: none;
+  border-right: none;
+}
+
+.game__cell:nth-child(4) {
+  border-left: none;
+}
+
+.game__cell:nth-child(5) {
+}
+
+.game__cell:nth-child(6) {
+  border-right: none;
+}
+.game__cell:nth-child(7) {
+  border-left: none;
+  border-bottom: none;
+}
+.game__cell:nth-child(8) {
+  border-bottom: none;
+}
+.game__cell:nth-child(9) {
+  border-right: none;
+  border-bottom: none;
+}
+#game__send-php {
+  display: none;
+}
