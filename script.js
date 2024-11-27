@@ -11,6 +11,16 @@ const phpInput = document.querySelector("#send-php");
 const getNextMoveIndex = () => moves.findIndex((el) => el === undefined);
 const isCellAlreadyTaken = (cellIndex) => moves.some((el) => el === cellIndex);
 
+function updateDisplay() {
+  const nextMove = getNextMoveIndex();
+  const cellsToUpdate = moves.slice(0, nextMove === -1 ? 9 : nextMove);
+
+  cellsToUpdate.forEach((cell, i) => {
+    const classToAdd = i % 2 ? "game__cell--picked-x" : "game__cell--picked-o";
+    gameCells[cell].classList.add(classToAdd);
+  });
+}
+
 function handleMove(cellIndex, moveEvent) {
   const moveIndex = getNextMoveIndex();
   const isCellTaken = isCellAlreadyTaken(cellIndex);
@@ -27,7 +37,8 @@ function handleMove(cellIndex, moveEvent) {
   phpInput.value = moves.join(",");
 
   // if player % 2=== 0 then player is circle
-  const currentPlayer = moveIndex % 2;
+
+  updateDisplay();
 }
 
 gameCells.forEach((cell, cellIndex) => {
