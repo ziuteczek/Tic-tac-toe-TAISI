@@ -22,7 +22,7 @@
             <button type="button" class="game__cell"></button>
             <button type="button" class="game__cell"></button>
         </div>
-        <input type="text" disabled name="board" id="game__send-php">
+        <input type="text" disabled name="board" id="send-php">
     </form>
 
     <script src="script.js"></script>

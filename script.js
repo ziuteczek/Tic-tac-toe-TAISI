@@ -6,6 +6,8 @@ const gameCells = document.querySelectorAll("button.game__cell");
 
 const gameForm = document.querySelector("form.game");
 
+const phpInput = document.querySelector("#send-php");
+
 const getNextMoveIndex = () => moves.findIndex((el) => el === undefined);
 const isCellAlreadyTaken = (cellIndex) => moves.some((el) => el === cellIndex);
 
@@ -22,6 +24,7 @@ function handleMove(cellIndex, moveEvent) {
 
   moves[moveIndex] = cellIndex;
   console.log(moves);
+  phpInput.value = moves.join(",");
 
   // if player % 2=== 0 then player is circle
   const currentPlayer = moveIndex % 2;
